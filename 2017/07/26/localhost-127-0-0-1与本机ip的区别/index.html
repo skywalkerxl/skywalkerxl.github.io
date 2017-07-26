@@ -4,20 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>徐浪的个人博客</title>
+    <title>localhost 127.0.0.1与本机ip的区别 | 徐浪的个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="徐浪">
     
 
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="徐浪的个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="这三者分别是什么？从根本上来说，localhost是域名，127.0.0.1是ip地址，最然人分解的地方也许是本机ip，因为这涉及到网卡的概念 ，本机网卡分为三块：有线网卡、无线网卡、虚拟网卡，具体的本机地址为多少取决于是与哪个网络接口绑定，这样可以供其它设备访问你的设备。 为什么这三者会联系在一起？在hosts文件中，定义了localhost=127.0.0.1，这是一个容易混淆的地方。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="localhost 127.0.0.1与本机ip的区别">
+<meta property="og:url" content="http://yoursite.com/2017/07/26/localhost-127-0-0-1与本机ip的区别/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
+<meta property="og:description" content="这三者分别是什么？从根本上来说，localhost是域名，127.0.0.1是ip地址，最然人分解的地方也许是本机ip，因为这涉及到网卡的概念 ，本机网卡分为三块：有线网卡、无线网卡、虚拟网卡，具体的本机地址为多少取决于是与哪个网络接口绑定，这样可以供其它设备访问你的设备。 为什么这三者会联系在一起？在hosts文件中，定义了localhost=127.0.0.1，这是一个容易混淆的地方。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-07-26T13:52:08.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="徐浪的个人博客">
+<meta name="twitter:title" content="localhost 127.0.0.1与本机ip的区别">
+<meta name="twitter:description" content="这三者分别是什么？从根本上来说，localhost是域名，127.0.0.1是ip地址，最然人分解的地方也许是本机ip，因为这涉及到网卡的概念 ，本机网卡分为三块：有线网卡、无线网卡、虚拟网卡，具体的本机地址为多少取决于是与哪个网络接口绑定，这样可以供其它设备访问你的设备。 为什么这三者会联系在一起？在hosts文件中，定义了localhost=127.0.0.1，这是一个容易混淆的地方。">
 
     
     
@@ -69,12 +73,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2017/07/26/localhost-127-0-0-1与本机ip的区别/" title="localhost 127.0.0.1与本机ip的区别" itemprop="url">localhost 127.0.0.1与本机ip的区别</a>
@@ -88,19 +90,21 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <a id="more"></a>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#这三者分别是什么？"><span class="toc-number">1.</span> <span class="toc-text">这三者分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么这三者会联系在一起？"><span class="toc-number">2.</span> <span class="toc-text">为什么这三者会联系在一起？</span></a></li></ol>
+		
+		</div>
+		
+		<a id="more"></a>
 <h3 id="这三者分别是什么？"><a href="#这三者分别是什么？" class="headerlink" title="这三者分别是什么？"></a>这三者分别是什么？</h3><pre><code>从根本上来说，localhost是域名，127.0.0.1是ip地址，最然人分解的地方也许是本机ip，因为这涉及到网卡的概念 ，本机网卡分为三块：有线网卡、无线网卡、虚拟网卡，具体的本机地址为多少取决于是与哪个网络接口绑定，这样可以供其它设备访问你的设备。
 </code></pre><h3 id="为什么这三者会联系在一起？"><a href="#为什么这三者会联系在一起？" class="headerlink" title="为什么这三者会联系在一起？"></a>为什么这三者会联系在一起？</h3><pre><code>在hosts文件中，定义了localhost=127.0.0.1，这是一个容易混淆的地方。
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+</code></pre>  
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 
@@ -108,85 +112,44 @@
 
 
 
-
-<div class="comments-count">
+	<div class="article-share" id="share">
 	
-</div>
+	  <div data-url="http://yoursite.com/2017/07/26/localhost-127-0-0-1与本机ip的区别/" data-title="localhost 127.0.0.1与本机ip的区别 | 徐浪的个人博客" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/07/21/In-the-Begining/" title="In the Beginning" itemprop="url">In the Beginning</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="徐浪" target="_blank" itemprop="author">徐浪</a>
-		
-  <p class="article-time">
-    <time datetime="2017-07-21T02:25:34.000Z" itemprop="datePublished"> 发表于 2017-07-21</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<h2 id="In-the-Beginning"><a href="#In-the-Beginning" class="headerlink" title="In the Beginning"></a>In the Beginning</h2><p>If I had love in the beginning, I still have it.</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/blog/">blog</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/blog/">blog</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/07/21/In-the-Begining/"  title="In the Beginning">
+ <strong>下一篇：</strong><br/> 
+ <span>In the Beginning
+</span>
+</a>
 </div>
 
-</footer>
+</nav>
+
+	
 
 
-    </article>
-
-
-
-
-
-
-
-</div>
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#这三者分别是什么？"><span class="toc-number">1.</span> <span class="toc-text">这三者分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么这三者会联系在一起？"><span class="toc-number">2.</span> <span class="toc-text">为什么这三者会联系在一起？</span></a></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -313,12 +276,89 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -379,4 +419,4 @@ $(document).ready(function(){
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>
