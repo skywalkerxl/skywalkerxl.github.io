@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>localhost、127.0.0.1与本机ip的区别 | 徐浪的个人博客</title>
+    <title>初涉nodeJS | 徐浪的个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="徐浪">
     
 
     
-    <meta name="description" content="区别与相关之处">
-<meta name="keywords" content="计算机网络">
+    <meta name="description" content="什么是nodeJS内容参考厂长的知乎文章Node.js是用来做什么的？，如果用晦涩的术语来解释node.js,会听到这样的说法  “node.js是一种通过Javascript语言开发web服务端的东西”    其实说到用javascript来实现，不如说是用ECMAScript来实现，而ECMAScript与Javascript的关系则是，ECMAScript是javascript的标准，而j">
+<meta name="keywords" content="nodeJS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="localhost、127.0.0.1与本机ip的区别">
-<meta property="og:url" content="http://yoursite.com/2017/07/26/localhost-127-0-0-1与本机ip的区别/index.html">
+<meta property="og:title" content="初涉nodeJS">
+<meta property="og:url" content="http://yoursite.com/2017/07/27/初涉nodeJS/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
-<meta property="og:description" content="区别与相关之处">
+<meta property="og:description" content="什么是nodeJS内容参考厂长的知乎文章Node.js是用来做什么的？，如果用晦涩的术语来解释node.js,会听到这样的说法  “node.js是一种通过Javascript语言开发web服务端的东西”    其实说到用javascript来实现，不如说是用ECMAScript来实现，而ECMAScript与Javascript的关系则是，ECMAScript是javascript的标准，而j">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-07-26T14:28:44.017Z">
+<meta property="og:updated_time" content="2017-07-27T03:41:04.256Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="localhost、127.0.0.1与本机ip的区别">
-<meta name="twitter:description" content="区别与相关之处">
+<meta name="twitter:title" content="初涉nodeJS">
+<meta name="twitter:description" content="什么是nodeJS内容参考厂长的知乎文章Node.js是用来做什么的？，如果用晦涩的术语来解释node.js,会听到这样的说法  “node.js是一种通过Javascript语言开发web服务端的东西”    其实说到用javascript来实现，不如说是用ECMAScript来实现，而ECMAScript与Javascript的关系则是，ECMAScript是javascript的标准，而j">
 
     
     
@@ -80,14 +80,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/07/26/localhost-127-0-0-1与本机ip的区别/" title="localhost、127.0.0.1与本机ip的区别" itemprop="url">localhost、127.0.0.1与本机ip的区别</a>
+      <a href="/2017/07/27/初涉nodeJS/" title="初涉nodeJS" itemprop="url">初涉nodeJS</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="徐浪" target="_blank" itemprop="author">徐浪</a>
 		
   <p class="article-time">
-    <time datetime="2017-07-26T13:38:16.000Z" itemprop="datePublished"> 发表于 2017-07-26</time>
+    <time datetime="2017-07-27T03:17:51.000Z" itemprop="datePublished"> 发表于 2017-07-27</time>
     
   </p>
 </header>
@@ -96,13 +96,21 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#区别与相关之处"><span class="toc-number">1.</span> <span class="toc-text">区别与相关之处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这三者分别是什么？"><span class="toc-number">2.</span> <span class="toc-text">这三者分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么这三者会联系在一起？"><span class="toc-number">3.</span> <span class="toc-text">为什么这三者会联系在一起？</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是nodeJS"><span class="toc-number">1.</span> <span class="toc-text">什么是nodeJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们为什么要用node-js"><span class="toc-number">2.</span> <span class="toc-text">我们为什么要用node.js</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="区别与相关之处"><a href="#区别与相关之处" class="headerlink" title="区别与相关之处"></a>区别与相关之处</h3><a id="more"></a>
-<h3 id="这三者分别是什么？"><a href="#这三者分别是什么？" class="headerlink" title="这三者分别是什么？"></a>这三者分别是什么？</h3><p>从根本上来说，localhost是域名，127.0.0.1是ip地址，最然人分解的地方也许是本机  ip，因为这涉及到网卡的概念 ，本机网卡分为三块：有线网卡、无线网卡、虚拟网卡，具体的本机地址为多少取决于是与哪个网络接口绑定，这样可以供其它设备访问你的设备。</p>
-<h3 id="为什么这三者会联系在一起？"><a href="#为什么这三者会联系在一起？" class="headerlink" title="为什么这三者会联系在一起？"></a>为什么这三者会联系在一起？</h3><p>在hosts文件中，定义了localhost=127.0.0.1，这是一个容易混淆的地方。</p>
+		<a id="more"></a>
+<h3 id="什么是nodeJS"><a href="#什么是nodeJS" class="headerlink" title="什么是nodeJS"></a>什么是nodeJS</h3><p>内容参考厂长的知乎文章<a href="https://www.zhihu.com/question/33578075" target="_blank" rel="external">Node.js是用来做什么的？</a>，如果用晦涩的术语来解释node.js,会听到这样的说法</p>
+<blockquote>
+<p>“node.js是一种通过Javascript语言开发web服务端的东西”  </p>
+</blockquote>
+<p>其实说到用javascript来实现，不如说是用ECMAScript来实现，而ECMAScript与Javascript的关系则是，ECMAScript是javascript的标准，而javascript则是ECMAScript的实现，</p>
+<h3 id="我们为什么要用node-js"><a href="#我们为什么要用node-js" class="headerlink" title="我们为什么要用node.js"></a>我们为什么要用node.js</h3><p>用专业的术语来说</p>
+<blockquote>
+<p>“node.js有非阻塞，事件驱动I/O等特性，从而让高并发(high concurrency)在的轮询(Polling)和comet构建的应用中成为可能”</p>
+</blockquote>
+<p>那我们来仔细的分析这句话，怎么理解“非阻塞，事件驱动输入输出”?可以想象服务器中存在一个循环，当有新的请求时，服务器会去响应这个请求，并把这个请求传给其他的进程（例如说是数据库查询），然后响应一个回调(callback)，之后会继续循环下去，我们可以发现整个过程中，服务器并不会闲着，而是以一种非阻塞的方式运行，同时，服务器也只会在用户端有事件发生的时候才会响应，这就是<strong>事件驱动</strong>。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -110,13 +118,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Basis-of-Computer-Engineering/">Basis of Computer Engineering</a>
+  <a class="article-category-link" href="/categories/blog/">blog</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/计算机网络/">计算机网络</a>
+  <span></span> <a href="/tags/nodeJS/">nodeJS</a>
   </div>
 
 </div>
@@ -125,7 +133,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/07/26/localhost-127-0-0-1与本机ip的区别/" data-title="localhost、127.0.0.1与本机ip的区别 | 徐浪的个人博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/07/27/初涉nodeJS/" data-title="初涉nodeJS | 徐浪的个人博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -138,19 +146,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/07/27/初涉nodeJS/" title="初涉nodeJS">
-  <strong>上一篇：</strong><br/>
-  <span>
-  初涉nodeJS</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/07/21/In-the-Begining/"  title="In the Beginning">
+<a href="/2017/07/26/localhost-127-0-0-1与本机ip的区别/"  title="localhost、127.0.0.1与本机ip的区别">
  <strong>下一篇：</strong><br/> 
- <span>In the Beginning
+ <span>localhost、127.0.0.1与本机ip的区别
 </span>
 </a>
 </div>
@@ -166,7 +166,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#区别与相关之处"><span class="toc-number">1.</span> <span class="toc-text">区别与相关之处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这三者分别是什么？"><span class="toc-number">2.</span> <span class="toc-text">这三者分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么这三者会联系在一起？"><span class="toc-number">3.</span> <span class="toc-text">为什么这三者会联系在一起？</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是nodeJS"><span class="toc-number">1.</span> <span class="toc-text">什么是nodeJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们为什么要用node-js"><span class="toc-number">2.</span> <span class="toc-text">我们为什么要用node.js</span></a></li></ol>
  
   </div>
 

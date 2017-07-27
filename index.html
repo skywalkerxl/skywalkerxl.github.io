@@ -77,6 +77,76 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/07/27/初涉nodeJS/" title="初涉nodeJS" itemprop="url">初涉nodeJS</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="徐浪" target="_blank" itemprop="author">徐浪</a>
+		
+  <p class="article-time">
+    <time datetime="2017-07-27T03:17:51.000Z" itemprop="datePublished"> 发表于 2017-07-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<h3 id="什么是nodeJS"><a href="#什么是nodeJS" class="headerlink" title="什么是nodeJS"></a>什么是nodeJS</h3><p>内容参考厂长的知乎文章<a href="https://www.zhihu.com/question/33578075" target="_blank" rel="external">Node.js是用来做什么的？</a>，如果用晦涩的术语来解释node.js,会听到这样的说法</p>
+<blockquote>
+<p>“node.js是一种通过Javascript语言开发web服务端的东西”  </p>
+</blockquote>
+<p>其实说到用javascript来实现，不如说是用ECMAScript来实现，而ECMAScript与Javascript的关系则是，ECMAScript是javascript的标准，而javascript则是ECMAScript的实现，</p>
+<h3 id="我们为什么要用node-js"><a href="#我们为什么要用node-js" class="headerlink" title="我们为什么要用node.js"></a>我们为什么要用node.js</h3><p>用专业的术语来说</p>
+<blockquote>
+<p>“node.js有非阻塞，事件驱动I/O等特性，从而让高并发(high concurrency)在的轮询(Polling)和comet构建的应用中成为可能”</p>
+</blockquote>
+<p>那我们来仔细的分析这句话，怎么理解“非阻塞，事件驱动输入输出”?可以想象服务器中存在一个循环，当有新的请求时，服务器会去响应这个请求，并把这个请求传给其他的进程（例如说是数据库查询），然后响应一个回调(callback)，之后会继续循环下去，我们可以发现整个过程中，服务器并不会闲着，而是以一种非阻塞的方式运行，同时，服务器也只会在用户端有事件发生的时候才会响应，这就是<strong>事件驱动</strong>。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/blog/">blog</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/nodeJS/">nodeJS</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/07/26/localhost-127-0-0-1与本机ip的区别/" title="localhost、127.0.0.1与本机ip的区别" itemprop="url">localhost、127.0.0.1与本机ip的区别</a>
   </h1>
   <p class="article-author">By
@@ -220,7 +290,7 @@
 		  
 		
 		  
-			<li><a href="/categories/blog/" title="blog">blog<sup>1</sup></a></li>
+			<li><a href="/categories/blog/" title="blog">blog<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -233,11 +303,15 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
 			
 		
 		</ul>
