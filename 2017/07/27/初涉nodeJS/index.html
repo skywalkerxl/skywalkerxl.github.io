@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/Node.js_logo.png">
 <meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/node_init.png">
 <meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/day1-3.png">
-<meta property="og:updated_time" content="2017-07-27T07:39:51.728Z">
+<meta property="og:updated_time" content="2017-07-27T12:59:56.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初涉nodeJS">
 <meta name="twitter:image" content="http://otqkq32hb.bkt.clouddn.com/Node.js_logo.png">
@@ -118,7 +118,7 @@
 <p>Comet是一种用于web的推送技术，能使服务器实时地将更新的信息传送到客户端，而无须客户端发出请求，目前有两种实现方式，长轮询和iframe流。</p>
 </blockquote>
 <p>这是维基百科上的解释，通俗理解则是类似于微博上的新鲜事功能，由服务器推送，无需客户端发出请求，应用的方面很多。</p>
-<h3 id="一个简单的小demo"><a href="#一个简单的小demo" class="headerlink" title="一个简单的小demo"></a>一个简单的小demo</h3><p>首先我们安装好node.js,教程参考<a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143450141843488beddae2a1044cab5acb5125baf0882000" target="_blank" rel="external">廖雪峰的安装Node.js和npm</a>，并安装好websocket，这样我们就可以搭建我们自己的服务器了，执行命令为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install socket.io</div></pre></td></tr></table></figure></p>
+<h3 id="一个简单的小demo"><a href="#一个简单的小demo" class="headerlink" title="一个简单的小demo"></a>一个简单的小demo</h3><p>首先我们安装好node.js,教程参考<a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143450141843488beddae2a1044cab5acb5125baf0882000" target="_blank" rel="external">廖雪峰的安装Node.js和npm</a>，并安装好websocket，这样我们就可以搭建我们自己的服务器了，执行命令为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install socket.io</div></pre></td></tr></table></figure></p>
 <p>安装完成后，我们新建个js文件，命名为server.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>); <span class="comment">//require的作用是用于加载，这里我们加载的是http部分</span></div><div class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'有人进来了'</span>);</div><div class="line">&#125;).listen(<span class="number">8888</span>);</div><div class="line"><span class="comment">//这里我们监听的8888端口,这样我们就可以通过在浏览器地址栏输入localhost:8888来访问我们的服务器了。</span></div><div class="line"><span class="comment">//在createServer中会有一个回调函数，该函数拥有两个参数，一个是请求request,另外一个则是响应response，</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'服务器开启成功'</span>);</div></pre></td></tr></table></figure></p>
 <p><img src="http://otqkq32hb.bkt.clouddn.com/node_init.png" alt=""></p>
 <p>展示效果如图。</p>
@@ -162,6 +162,14 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2017/07/27/灵活的语言-Javascript/" title="灵活的语言-Javascript">
+  <strong>上一篇：</strong><br/>
+  <span>
+  灵活的语言-Javascript</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2017/07/26/localhost-127-0-0-1与本机ip的区别/"  title="localhost、127.0.0.1与本机ip的区别">
@@ -209,6 +217,10 @@
 		  
 		
 		  
+			<li><a href="/categories/JavaScript设计模式/" title="JavaScript设计模式">JavaScript设计模式<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/blog/" title="blog">blog<sup>2</sup></a></li>
 		  
 		
@@ -231,6 +243,10 @@
 		
 			
 				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/JavaScript设计模式/" title="JavaScript设计模式">JavaScript设计模式<sup>1</sup></a></li>
 			
 		
 		</ul>
