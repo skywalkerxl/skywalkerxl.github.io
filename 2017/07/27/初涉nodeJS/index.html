@@ -11,19 +11,18 @@
     
 
     
-    <meta name="description" content="初涉node.js">
-<meta name="keywords" content="nodeJS">
+    <meta name="keywords" content="nodeJS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初涉nodeJS">
 <meta property="og:url" content="http://yoursite.com/2017/07/27/初涉nodeJS/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
-<meta property="og:description" content="初涉node.js">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/Node.js_logo.png">
-<meta property="og:updated_time" content="2017-07-27T06:37:18.864Z">
+<meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/node_init.png">
+<meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/day1-3.png">
+<meta property="og:updated_time" content="2017-07-27T07:39:51.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初涉nodeJS">
-<meta name="twitter:description" content="初涉node.js">
 <meta name="twitter:image" content="http://otqkq32hb.bkt.clouddn.com/Node.js_logo.png">
 
     
@@ -98,12 +97,12 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#初涉node-js"><span class="toc-number">1.</span> <span class="toc-text">初涉node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是nodeJS"><span class="toc-number">2.</span> <span class="toc-text">什么是nodeJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们为什么要用node-js"><span class="toc-number">3.</span> <span class="toc-text">我们为什么要用node.js</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是nodeJS"><span class="toc-number">1.</span> <span class="toc-text">什么是nodeJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们为什么要用node-js"><span class="toc-number">2.</span> <span class="toc-text">我们为什么要用node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个简单的小demo"><span class="toc-number">3.</span> <span class="toc-text">一个简单的小demo</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="初涉node-js"><a href="#初涉node-js" class="headerlink" title="初涉node.js"></a>初涉node.js</h3><p><img src="http://otqkq32hb.bkt.clouddn.com/Node.js_logo.png" alt="nodejs"><br><a id="more"></a></p>
-<h3 id="什么是nodeJS"><a href="#什么是nodeJS" class="headerlink" title="什么是nodeJS"></a>什么是nodeJS</h3><p>内容参考厂长的知乎文章<a href="https://www.zhihu.com/question/33578075" target="_blank" rel="external">Node.js是用来做什么的？</a>，如果用晦涩的术语来解释node.js,会听到这样的说法</p>
+		<p><img src="http://otqkq32hb.bkt.clouddn.com/Node.js_logo.png" alt=""><br><a id="more"></a></p>
+<h3 id="什么是nodeJS"><a href="#什么是nodeJS" class="headerlink" title="什么是nodeJS"></a>什么是nodeJS</h3><p>如果用晦涩的术语来解释node.js,会听到这样的说法</p>
 <blockquote>
 <p>“node.js是一种通过Javascript语言开发web服务端的东西”  </p>
 </blockquote>
@@ -112,7 +111,22 @@
 <blockquote>
 <p>“node.js有非阻塞，事件驱动I/O等特性，从而让高并发(high concurrency)在的轮询(Polling)和comet构建的应用中成为可能”</p>
 </blockquote>
-<p>那我们来仔细的分析这句话，怎么理解“非阻塞，事件驱动输入输出”?可以想象服务器中存在一个循环，当有新的请求时，服务器会去响应这个请求，并把这个请求传给其他的进程（例如说是数据库查询），然后响应一个回调(callback)，之后会继续循环下去，我们可以发现整个过程中，服务器并不会闲着，而是以一种非阻塞的方式运行，同时，服务器也只会在用户端有事件发生的时候才会响应，这就是<strong>事件驱动</strong>。</p>
+<p>那我们来仔细的分析这句话，怎么理解“非阻塞，事件驱动输入输出”?可以想象服务器中存在一个循环，当有新的请求时，服务器会去响应这个请求，并把这个请求传给其他的进程（例如数据库查询），然后响应一个回调(callback)，之后会继续循环下去，我们可以发现整个过程中，服务器并不会闲着，而是以一种<strong>非阻塞</strong>的方式运行，同时，服务器也只会在用户端有事件发生的时候才会响应，这就是<strong>事件驱动</strong>。</p>
+<p>我们可以想象一下，像是Apache这样的传统服务器，每次有一个新用户登录到你的网站，你的服务器就得分配一个进程给照这个用户，虽然这些进程大部分是空闲，但是也同样占用着内存，如果微博、知乎之类的网站也采用了这种方式，那给服务器带来的压力是惊人的，而nodejs的<strong>事件驱动</strong>、<strong>非阻塞</strong>的方式让服务器按时间来相应，这也对应了描述的后半句话“从而让高并发在的轮询和comet构建的应用中成为可能”。内容参考厂长的知乎文章<a href="https://www.zhihu.com/question/33578075" target="_blank" rel="external">Node.js是用来做什么的？</a>，</p>
+<p>说到这里有必要补充解释一下什么是comet</p>
+<blockquote>
+<p>Comet是一种用于web的推送技术，能使服务器实时地将更新的信息传送到客户端，而无须客户端发出请求，目前有两种实现方式，长轮询和iframe流。</p>
+</blockquote>
+<p>这是维基百科上的解释，通俗理解则是类似于微博上的新鲜事功能，由服务器推送，无需客户端发出请求，应用的方面很多。</p>
+<h3 id="一个简单的小demo"><a href="#一个简单的小demo" class="headerlink" title="一个简单的小demo"></a>一个简单的小demo</h3><p>首先我们安装好node.js,教程参考<a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143450141843488beddae2a1044cab5acb5125baf0882000" target="_blank" rel="external">廖雪峰的安装Node.js和npm</a>，并安装好websocket，这样我们就可以搭建我们自己的服务器了，执行命令为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install socket.io</div></pre></td></tr></table></figure></p>
+<p>安装完成后，我们新建个js文件，命名为server.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>); <span class="comment">//require的作用是用于加载，这里我们加载的是http部分</span></div><div class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'有人进来了'</span>);</div><div class="line">&#125;).listen(<span class="number">8888</span>);</div><div class="line"><span class="comment">//这里我们监听的8888端口,这样我们就可以通过在浏览器地址栏输入localhost:8888来访问我们的服务器了。</span></div><div class="line"><span class="comment">//在createServer中会有一个回调函数，该函数拥有两个参数，一个是请求request,另外一个则是响应response，</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'服务器开启成功'</span>);</div></pre></td></tr></table></figure></p>
+<p><img src="http://otqkq32hb.bkt.clouddn.com/node_init.png" alt=""></p>
+<p>展示效果如图。</p>
+<p>至此，我们可以开始下个环节，访问服务器上的文件，如index.html。</p>
+<p>我们再新建一个文件index.html,里面写上<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello,欢迎来到首页！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>另外，我们新建一个server2.js,里面写上<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>); <span class="comment">//加载http模块</span></div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>); <span class="comment">//加载fs模块</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> documentRoot = <span class="string">'D:/HRML5Demo'</span>; <span class="comment">//设定根目录</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"有人进来了"</span>);</div><div class="line">  <span class="keyword">var</span> url = req.url; <span class="comment">//获取用户请求的文件</span></div><div class="line">  <span class="keyword">var</span> file = documentRoot + url; <span class="comment">//拼接文件地址</span></div><div class="line">  fs.readFile(file, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(err)&#123;</div><div class="line">      res.writeHeader(<span class="number">404</span>, &#123;</div><div class="line">        <span class="string">'content-type'</span> : <span class="string">'text/html; charset="utf-8"'</span></div><div class="line">      &#125;);</div><div class="line">      res.write(<span class="string">"&lt;h1&gt;404&lt;/h1&gt;&lt;p&gt;您要访问的页面不存在&lt;/p&gt;"</span>);</div><div class="line">      res.end();</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      res.writeHeader(<span class="number">200</span>, &#123;</div><div class="line">        <span class="string">'content-type'</span>: <span class="string">'text/html; charset="utf-8"'</span></div><div class="line">      &#125;);</div><div class="line">      res.write(data);</div><div class="line">      res.end();</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;).listen(<span class="number">8888</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'服务器开启成功'</span>);</div></pre></td></tr></table></figure></p>
+<p>访问localhost:8888/index.html,显示效果如下<br><img src="http://otqkq32hb.bkt.clouddn.com/day1-3.png" alt=""></p>
+<p>至此，第一步完成。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -168,7 +182,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#初涉node-js"><span class="toc-number">1.</span> <span class="toc-text">初涉node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是nodeJS"><span class="toc-number">2.</span> <span class="toc-text">什么是nodeJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们为什么要用node-js"><span class="toc-number">3.</span> <span class="toc-text">我们为什么要用node.js</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是nodeJS"><span class="toc-number">1.</span> <span class="toc-text">什么是nodeJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们为什么要用node-js"><span class="toc-number">2.</span> <span class="toc-text">我们为什么要用node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个简单的小demo"><span class="toc-number">3.</span> <span class="toc-text">一个简单的小demo</span></a></li></ol>
  
   </div>
 
@@ -212,11 +226,11 @@
 			
 		
 			
-				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
+				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
+				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
 			
 		
 		</ul>
