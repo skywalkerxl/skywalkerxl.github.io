@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="徐浪的个人博客">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/OOP.jpg">
-<meta property="og:updated_time" content="2017-07-31T02:02:33.576Z">
+<meta property="og:updated_time" content="2017-07-31T13:28:04.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS中的面向对象编程">
 <meta name="twitter:image" content="http://otqkq32hb.bkt.clouddn.com/OOP.jpg">
@@ -95,7 +95,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象"><span class="toc-number">1.</span> <span class="toc-text">面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-number">2.</span> <span class="toc-text">封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个类"><span class="toc-number">2.1.</span> <span class="toc-text">创建一个类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性和方法封装"><span class="toc-number">2.2.</span> <span class="toc-text">属性和方法封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现闭包"><span class="toc-number">2.3.</span> <span class="toc-text">实现闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建对象的安全模式"><span class="toc-number">2.4.</span> <span class="toc-text">创建对象的安全模式</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象"><span class="toc-number">1.</span> <span class="toc-text">面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-number">2.</span> <span class="toc-text">封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个类"><span class="toc-number">2.1.</span> <span class="toc-text">创建一个类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性和方法封装"><span class="toc-number">2.2.</span> <span class="toc-text">属性和方法封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现闭包"><span class="toc-number">2.3.</span> <span class="toc-text">实现闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建对象的安全模式"><span class="toc-number">2.4.</span> <span class="toc-text">创建对象的安全模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-number">3.</span> <span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类式继承"><span class="toc-number">3.1.</span> <span class="toc-text">类式继承</span></a></li></ol></li></ol>
 		
 		</div>
 		
@@ -122,6 +122,24 @@
 <p>使用的我们可以这样使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> book = <span class="keyword">new</span> Book();</div><div class="line">book.display(); <span class="comment">//display this book</span></div></pre></td></tr></table></figure></p>
 <h3 id="创建对象的安全模式"><a href="#创建对象的安全模式" class="headerlink" title="创建对象的安全模式"></a>创建对象的安全模式</h3><p>在之前的实例化对象的过程中，我们一直强调要添加new关键字，但是我们仍需考虑忘记使用new关键字的情况。</p>
 <p>我们可以这样做<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Book = <span class="function"><span class="keyword">function</span>(<span class="params">title, time ,type</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>( <span class="keyword">this</span> <span class="keyword">instanceof</span> Book )&#123;</div><div class="line">    <span class="keyword">this</span>.title = title;</div><div class="line">    <span class="keyword">this</span>.time = time;</div><div class="line">    <span class="keyword">this</span>.type = type;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Book(title, time ,type);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>JS本身并没有继承这一现有的机制，但是通过其他特性，实现了继承这一功能。</p>
+<h3 id="类式继承"><a href="#类式继承" class="headerlink" title="类式继承"></a>类式继承</h3><p>类式继承就这样的几个步骤<br>第一步：声明父类<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperClass</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.superValue = <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>同时我们为父类添加方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SuperClass.prototype.getSuperValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.superValue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>第二步：声明子类<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubClass</span>(<span class="params"></span>)</span>&#123;。</div><div class="line">  <span class="keyword">this</span>.subValue = <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>第三步：继承父类<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SubClass.prototype = <span class="keyword">new</span> SuperClass();</div></pre></td></tr></table></figure></p>
+<p>同时我们为子类添加共有方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SubClass.prototype.getSubValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.subValue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>从这里我们不难看出，继承的过程只是把第一个类的实例赋值给了第二个类的原型而已，其实这里我们也不难理解，首先原型对象的作用就是为类的原型添加共有方法。</p>
+<p>我们可以通过如下的方式来使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> instane = <span class="keyword">new</span> SubClass();</div><div class="line">instance.getSuperValue(); <span class="comment">//true</span></div><div class="line">instance.getSubValue(); <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
+<p>在之前我们知道instanceof可以用来检测一个对象是否是一个类的实例，在这里我们也可以做如下的测试</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(instance <span class="keyword">instanceof</span> SubClass); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(instance <span class="keyword">instanceof</span> SuperClass); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(SubClass <span class="keyword">instanceof</span> SuperClass); <span class="comment">//false</span></div></pre></td></tr></table></figure>
+<p>到这里，有人会问，SubClass是SuperClass的子类，为什么这里会显示false呢？</p>
+<p>这里我们需要注意一点</p>
+<blockquote>
+<p>instanceof是判断前面的对象是否是后面类（对象）的实例，并不表示两者的继承关系</p>
+</blockquote>
+<p>如果我们这样做：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(SubClass.prototype <span class="keyword">instanceof</span> SuperClass); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p>我们都知道所有对象都继承于Object,所以我们通过如下代码来证明这一点<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(instance instanceod <span class="built_in">Object</span>); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -203,7 +221,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象"><span class="toc-number">1.</span> <span class="toc-text">面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-number">2.</span> <span class="toc-text">封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个类"><span class="toc-number">2.1.</span> <span class="toc-text">创建一个类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性和方法封装"><span class="toc-number">2.2.</span> <span class="toc-text">属性和方法封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现闭包"><span class="toc-number">2.3.</span> <span class="toc-text">实现闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建对象的安全模式"><span class="toc-number">2.4.</span> <span class="toc-text">创建对象的安全模式</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象"><span class="toc-number">1.</span> <span class="toc-text">面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-number">2.</span> <span class="toc-text">封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个类"><span class="toc-number">2.1.</span> <span class="toc-text">创建一个类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性和方法封装"><span class="toc-number">2.2.</span> <span class="toc-text">属性和方法封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现闭包"><span class="toc-number">2.3.</span> <span class="toc-text">实现闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建对象的安全模式"><span class="toc-number">2.4.</span> <span class="toc-text">创建对象的安全模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-number">3.</span> <span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类式继承"><span class="toc-number">3.1.</span> <span class="toc-text">类式继承</span></a></li></ol></li></ol>
  
   </div>
 
@@ -226,15 +244,15 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Basis-of-Computer-Engineering/" title="Basis of Computer Engineering">Basis of Computer Engineering<sup>1</sup></a></li>
-		  
-		
-		  
 			<li><a href="/categories/JavaScript设计模式/" title="JavaScript设计模式">JavaScript设计模式<sup>2</sup></a></li>
 		  
 		
 		  
 			<li><a href="/categories/blog/" title="blog">blog<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/计算机基础/" title="计算机基础">计算机基础<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -255,11 +273,11 @@
 			
 		
 			
-				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
+				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
+				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
 			
 		
 		</ul>
