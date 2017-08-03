@@ -4,25 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>localhost、127.0.0.1与本机ip的区别 | 徐浪的个人博客</title>
+    <title>简单工厂模式 | 徐浪的个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lang">
     
 
     
-    <meta name="description" content="区别与相关之处">
-<meta name="keywords" content="计算机网络">
+    <meta name="keywords" content="JavaScript设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="localhost、127.0.0.1与本机ip的区别">
-<meta property="og:url" content="http://xulang.site/2017/07/26/localhost-127-0-0-1与本机ip的区别/index.html">
+<meta property="og:title" content="简单工厂模式">
+<meta property="og:url" content="http://xulang.site/2017/08/03/简单工厂模式/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
-<meta property="og:description" content="区别与相关之处">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-07-31T13:30:21.126Z">
+<meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/SimpleFactory_logo.jpg">
+<meta property="og:updated_time" content="2017-08-03T03:20:18.234Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="localhost、127.0.0.1与本机ip的区别">
-<meta name="twitter:description" content="区别与相关之处">
+<meta name="twitter:title" content="简单工厂模式">
+<meta name="twitter:image" content="http://otqkq32hb.bkt.clouddn.com/SimpleFactory_logo.jpg">
 
     
     
@@ -80,14 +79,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/07/26/localhost-127-0-0-1与本机ip的区别/" title="localhost、127.0.0.1与本机ip的区别" itemprop="url">localhost、127.0.0.1与本机ip的区别</a>
+      <a href="/2017/08/03/简单工厂模式/" title="简单工厂模式" itemprop="url">简单工厂模式</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lang" target="_blank" itemprop="author">Lang</a>
 		
   <p class="article-time">
-    <time datetime="2017-07-26T13:38:16.000Z" itemprop="datePublished"> 发表于 2017-07-26</time>
+    <time datetime="2017-08-03T01:53:56.000Z" itemprop="datePublished"> 发表于 2017-08-03</time>
     
   </p>
 </header>
@@ -96,13 +95,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#区别与相关之处"><span class="toc-number">1.</span> <span class="toc-text">区别与相关之处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这三者分别是什么？"><span class="toc-number">2.</span> <span class="toc-text">这三者分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么这三者会联系在一起？"><span class="toc-number">3.</span> <span class="toc-text">为什么这三者会联系在一起？</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#从一个小模块说起"><span class="toc-number">1.</span> <span class="toc-text">从一个小模块说起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写一个体育器材商店"><span class="toc-number">2.</span> <span class="toc-text">编写一个体育器材商店</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="区别与相关之处"><a href="#区别与相关之处" class="headerlink" title="区别与相关之处"></a>区别与相关之处</h3><a id="more"></a>
-<h3 id="这三者分别是什么？"><a href="#这三者分别是什么？" class="headerlink" title="这三者分别是什么？"></a>这三者分别是什么？</h3><p>从根本上来说，localhost是域名，127.0.0.1是ip地址，最然人分解的地方也许是本机  ip，因为这涉及到网卡的概念 ，本机网卡分为三块：有线网卡、无线网卡、虚拟网卡，具体的本机地址为多少取决于是与哪个网络接口绑定，这样可以供其它设备访问你的设备。</p>
-<h3 id="为什么这三者会联系在一起？"><a href="#为什么这三者会联系在一起？" class="headerlink" title="为什么这三者会联系在一起？"></a>为什么这三者会联系在一起？</h3><p>在hosts文件中，定义了localhost=127.0.0.1，这是一个容易混淆的地方。</p>
+		<p><img src="http://otqkq32hb.bkt.clouddn.com/SimpleFactory_logo.jpg" alt="简单工厂模式"><br><a id="more"></a></p>
+<blockquote>
+<p>简单工厂模式（Simple Factory）:又叫静态工厂模式，由一个对象决定创建一种产品对象类的实例。主要用来创建同一类对象。</p>
+</blockquote>
+<h2 id="从一个小模块说起"><a href="#从一个小模块说起" class="headerlink" title="从一个小模块说起"></a>从一个小模块说起</h2><p>经过之前的面向对象的学习，我们现在尝试编写一个登录模块。该登录模块拥有三个功能，分别是:”显示警示框”、“显示确认框”、“显示提示框”,我们可以这样写。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//警示框</span></div><div class="line"><span class="keyword">var</span> LoginAlert = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.content = text;</div><div class="line">&#125;</div><div class="line">LoginAlert.prototype.show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//显示警示框</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//确认框</span></div><div class="line"><span class="keyword">var</span> LoginConfirm = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.content = text;</div><div class="line">&#125;</div><div class="line">LoginConfirm.prototype.show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//显示确认框</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//显示提示框</span></div><div class="line"><span class="keyword">var</span> LoginPrompt = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.content = text;</div><div class="line">&#125;</div><div class="line">LoginPrompt.prototype.show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//显示提示框</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>写完了这些之后，我们完成了登录模块的功能需求，这个时候如果其他注册模块的同事需要我们的代码，我们是不是可以将这些所有的基类封装在一个工厂对象里面，使用的时候再调用对应的方法呢？这就是简单工厂模式的关键所在。</p>
+<h2 id="编写一个体育器材商店"><a href="#编写一个体育器材商店" class="headerlink" title="编写一个体育器材商店"></a>编写一个体育器材商店</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//足球基类</span></div><div class="line"><span class="keyword">var</span> FootBall = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.intro = <span class="string">'足球在世界范围内很流行'</span>;</div><div class="line">&#125;</div><div class="line">Football.prototype = &#123;</div><div class="line">  <span class="attr">getMember</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'每个队伍需要11名'</span>);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">getBallSize</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'足球很大'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//篮球基类</span></div><div class="line"><span class="keyword">var</span> BasketBall = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.intro = <span class="string">'篮球盛行于美国'</span>;</div><div class="line">&#125;</div><div class="line">BasketBall.prototype = &#123;</div><div class="line">  <span class="attr">getMember</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'每个队伍需要5名队员'</span>);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">getBallSize</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'篮球很大'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//网球基类</span></div><div class="line"><span class="keyword">var</span> Tennis = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.intro = <span class="string">'每年有很多网球系列赛'</span>;</div><div class="line">&#125;</div><div class="line">Tennis.prototype = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  getMember : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'每个队伍需要一名队员'</span>);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">getBallSize</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'网球很小'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>写到这里，我们拥有了三个基类，我们可以用一个工厂对象囊括这些方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> SportsFactory = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">switch</span>(name)&#123;</div><div class="line">    <span class="keyword">case</span> <span class="string">'NBA'</span>: </div><div class="line">    	<span class="keyword">return</span> <span class="keyword">new</span> BasketBall(); </div><div class="line">    <span class="keyword">case</span> <span class="string">'worldCup'</span>:</div><div class="line">    	<span class="keyword">return</span> <span class="keyword">new</span> FootBall(); </div><div class="line">    <span class="keyword">case</span> <span class="string">'FrenchOpen'</span>:</div><div class="line">    	<span class="keyword">return</span> <span class="keyword">new</span> Tennis(); </div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -110,13 +114,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/计算机基础/">计算机基础</a>
+  <a class="article-category-link" href="/categories/Javascript设计模式/">Javascript设计模式</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/计算机网络/">计算机网络</a>
+  <span></span> <a href="/tags/JavaScript设计模式/">JavaScript设计模式</a>
   </div>
 
 </div>
@@ -125,7 +129,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://xulang.site/2017/07/26/localhost-127-0-0-1与本机ip的区别/" data-title="localhost、127.0.0.1与本机ip的区别 | 徐浪的个人博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://xulang.site/2017/08/03/简单工厂模式/" data-title="简单工厂模式 | 徐浪的个人博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -138,19 +142,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/07/27/初涉nodeJS/" title="初涉nodeJS">
-  <strong>上一篇：</strong><br/>
-  <span>
-  初涉nodeJS</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/07/21/In-the-Begining/"  title="In the Beginning">
+<a href="/2017/07/28/JS中的面向对象编程/"  title="JS中的面向对象编程">
  <strong>下一篇：</strong><br/> 
- <span>In the Beginning
+ <span>JS中的面向对象编程
 </span>
 </a>
 </div>
@@ -192,7 +188,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#区别与相关之处"><span class="toc-number">1.</span> <span class="toc-text">区别与相关之处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这三者分别是什么？"><span class="toc-number">2.</span> <span class="toc-text">这三者分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么这三者会联系在一起？"><span class="toc-number">3.</span> <span class="toc-text">为什么这三者会联系在一起？</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#从一个小模块说起"><span class="toc-number">1.</span> <span class="toc-text">从一个小模块说起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写一个体育器材商店"><span class="toc-number">2.</span> <span class="toc-text">编写一个体育器材商店</span></a></li></ol>
  
   </div>
 
