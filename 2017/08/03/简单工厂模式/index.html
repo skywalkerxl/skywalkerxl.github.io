@@ -11,16 +11,19 @@
     
 
     
-    <meta name="keywords" content="JavaScript设计模式">
+    <meta name="description" content="工厂三兄弟（一） 简单工厂模式">
+<meta name="keywords" content="JavaScript设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单工厂模式">
 <meta property="og:url" content="http://xulang.site/2017/08/03/简单工厂模式/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
+<meta property="og:description" content="工厂三兄弟（一） 简单工厂模式">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/SimpleFactory_logo.jpg">
-<meta property="og:updated_time" content="2017-08-03T04:08:23.794Z">
+<meta property="og:updated_time" content="2017-08-05T12:29:05.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单工厂模式">
+<meta name="twitter:description" content="工厂三兄弟（一） 简单工厂模式">
 <meta name="twitter:image" content="http://otqkq32hb.bkt.clouddn.com/SimpleFactory_logo.jpg">
 
     
@@ -99,9 +102,11 @@
 		
 		</div>
 		
-		<p><img src="http://otqkq32hb.bkt.clouddn.com/SimpleFactory_logo.jpg" alt="简单工厂模式"><br><a id="more"></a></p>
+		<p>工厂三兄弟（一） 简单工厂模式<br><a id="more"></a><br><img src="http://otqkq32hb.bkt.clouddn.com/SimpleFactory_logo.jpg" alt="简单工厂模式"></p>
+<blockquote>
 <blockquote>
 <p>简单工厂模式（Simple Factory）:又叫静态工厂模式，由一个对象决定创建一种产品对象类的实例。主要用来创建同一类对象。</p>
+</blockquote>
 </blockquote>
 <h2 id="从一个小模块说起"><a href="#从一个小模块说起" class="headerlink" title="从一个小模块说起"></a>从一个小模块说起</h2><p>经过之前的面向对象的学习，我们现在尝试编写一个登录模块。该登录模块拥有三个功能，分别是:”显示警示框”、“显示确认框”、“显示提示框”,我们可以这样写。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//警示框</span></div><div class="line"><span class="keyword">var</span> LoginAlert = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.content = text;</div><div class="line">&#125;</div><div class="line">LoginAlert.prototype.show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//显示警示框</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//确认框</span></div><div class="line"><span class="keyword">var</span> LoginConfirm = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.content = text;</div><div class="line">&#125;</div><div class="line">LoginConfirm.prototype.show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//显示确认框</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//显示提示框</span></div><div class="line"><span class="keyword">var</span> LoginPrompt = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.content = text;</div><div class="line">&#125;</div><div class="line">LoginPrompt.prototype.show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//显示提示框</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>写完了这些之后，我们完成了登录模块的功能需求，这个时候如果其他注册模块的同事需要我们的代码，我们是不是可以将这些所有的基类封装在一个工厂对象里面，使用的时候再调用对应的方法呢？这就是简单工厂模式的关键所在。</p>
@@ -248,11 +253,11 @@
 			
 		
 			
-				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
+				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
+				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
 			
 		
 		</ul>
