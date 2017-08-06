@@ -11,19 +11,19 @@
     
 
     
-    <meta name="description" content="工厂模式三兄弟（三） 抽象工厂模式">
+    <meta name="description" content="工厂三兄弟（三） 抽象工厂模式">
 <meta name="keywords" content="JavaScript设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="抽象工厂模式">
 <meta property="og:url" content="http://xulang.site/2017/08/05/抽象工厂模式/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
-<meta property="og:description" content="工厂模式三兄弟（三） 抽象工厂模式">
+<meta property="og:description" content="工厂三兄弟（三） 抽象工厂模式">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/AbstractFactoryLogo.png">
-<meta property="og:updated_time" content="2017-08-06T01:24:25.301Z">
+<meta property="og:updated_time" content="2017-08-06T01:26:52.324Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="抽象工厂模式">
-<meta name="twitter:description" content="工厂模式三兄弟（三） 抽象工厂模式">
+<meta name="twitter:description" content="工厂三兄弟（三） 抽象工厂模式">
 <meta name="twitter:image" content="http://otqkq32hb.bkt.clouddn.com/AbstractFactoryLogo.png">
 
     
@@ -102,9 +102,13 @@
 		
 		</div>
 		
-		<p>工厂模式三兄弟（三） 抽象工厂模式<br><a id="more"></a><br><img src="http://otqkq32hb.bkt.clouddn.com/AbstractFactoryLogo.png" alt="抽象工厂模式"></p>
+		<p>工厂三兄弟（三） 抽象工厂模式<br><a id="more"></a><br><img src="http://otqkq32hb.bkt.clouddn.com/AbstractFactoryLogo.png" alt="抽象工厂模式"></p>
 <h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><blockquote>
-<p><strong>抽象工厂模式</strong>（Abstract Factory）：通过对类的工厂抽象使其业务用于对产品类簇的创建，而不负责某一类产品的实例<br>在其他的编程语言中，抽象通过定义abstract关键字来实现，在javascript中，abstract是以<strong>保留字</strong>的形式出现，虽然不可以直接使用，但是我们可以灵活的通过其他的方式来实现，有点我们需要明白的是<br>抽象类是一种声明但不能使用的类，当你使用时就会报错。</p>
+<p><strong>抽象工厂模式</strong>（Abstract Factory）：通过对类的工厂抽象使其业务用于对产品类簇的创建，而不负责某一类产品的实例</p>
+</blockquote>
+<p>在其他的编程语言中，抽象通过定义abstract关键字来实现，在javascript中，abstract是以<strong>保留字</strong>的形式出现，虽然不可以直接使用，但是我们可以灵活的通过其他的方式来实现，有点我们需要明白的是</p>
+<blockquote>
+<p>抽象类是一种声明但不能使用的类，当你使用时就会报错。</p>
 </blockquote>
 <p>基于这一点，我们可以在javascript中这样来实现，代码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 汽车抽象类，当使用其实例对象的方法时会抛出错误。</span></div><div class="line"><span class="keyword">var</span> Car = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Car.prototype = &#123;</div><div class="line">  <span class="attr">getPrice</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'抽象方法不能调用'</span>);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">getSpeed</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'抽象方法不能调用'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>从上面的代码中我们可以看到这个Car类其实创建出来根本没啥作用，只是在实例化的时候抛出个Error，但是我们需要明白的是，一个类除了可以被实例化之外，我们还能继承这个类，而继承正是抽象类的关键所在，我们用一个子类继承了这个抽象类Car之后，就拥有了Car类的方法。</p>
@@ -248,11 +252,11 @@
 			
 		
 			
-				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
+				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
+				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
 			
 		
 		</ul>
