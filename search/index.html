@@ -1,10 +1,10 @@
 
-  <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>归档: 2017/7 | 徐浪的个人博客</title>
+    <title>search | 徐浪的个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lang">
@@ -12,12 +12,13 @@
 
     
     <meta property="og:type" content="website">
-<meta property="og:title" content="徐浪的个人博客">
-<meta property="og:url" content="http://xulang.site/archives/2017/07/index.html">
+<meta property="og:title" content="search">
+<meta property="og:url" content="http://xulang.site/search/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-06T01:36:24.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="徐浪的个人博客">
+<meta name="twitter:title" content="search">
 
     
     
@@ -69,86 +70,25 @@
       </header>
       <div id="container">
         
-
-<div class="archive-title" >
-  <h2 class="archive-icon">2017/7</h2>
-  
-  <div class="archiveslist archive-float clearfix">
-   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">2017 年 08 月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">2017 年 07 月</a><span class="archive-list-count">5</span></li></ul>
- </div>
-  
+<div  id="main" class="page">
+  <div id='cse' style='width:100%;text-align:center'>正在加载搜索结果，请稍等。</div>
 </div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/07/28/JS中的面向对象编程/" title="JS中的面向对象编程" itemprop="url">
-  
-
-    <time datetime="2017-07-28T02:37:40.000Z" itemprop="datePublished">2017-07-28</time>
-
-
-    <h1 itemprop="name">JS中的面向对象编程</h1>
-
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/07/27/灵活的语言-Javascript/" title="灵活的语言-Javascript" itemprop="url">
-  
-
-    <time datetime="2017-07-27T11:48:20.000Z" itemprop="datePublished">2017-07-27</time>
-
-
-    <h1 itemprop="name">灵活的语言-Javascript</h1>
-
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/07/27/初涉nodeJS/" title="初涉nodeJS" itemprop="url">
-  
-
-    <time datetime="2017-07-27T03:17:51.000Z" itemprop="datePublished">2017-07-27</time>
-
-
-    <h1 itemprop="name">初涉nodeJS</h1>
-
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/07/26/localhost-127-0-0-1与本机ip的区别/" title="localhost、127.0.0.1与本机ip的区别" itemprop="url">
-  
-
-    <time datetime="2017-07-26T13:38:16.000Z" itemprop="datePublished">2017-07-26</time>
-
-
-    <h1 itemprop="name">localhost、127.0.0.1与本机ip的区别</h1>
-
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/07/21/In-the-Begining/" title="In the Beginning" itemprop="url">
-  
-
-    <time datetime="2017-07-21T02:25:34.000Z" itemprop="datePublished">2017-07-21</time>
-
-
-    <h1 itemprop="name">In the Beginning</h1>
-
-  </a>
-</section>
-
-
-  </div>
-</div>
+<script src="http://www.google.com.hk/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load('search', '1', {language : 'zh-CN',style: google.loader.themes.MINIMALIST});
+google.setOnLoadCallback(function(){
+  var customSearchControl = new google.search.CustomSearchControl('null');
+  customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+  var options = new google.search.DrawOptions();
+  options.setAutoComplete(true);
+  customSearchControl.draw('cse', options);
+  var match = location.search.match(/q=([^&]*)(&|$)/);
+  if(match && match[1]){
+    var search = decodeURIComponent(match[1]); 
+    customSearchControl.execute(search);
+  }
+},true);
+</script>
 
       </div>
       <footer><div id="footer" >
@@ -242,6 +182,18 @@ $(document).ready(function(){
 
 
 
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"11"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
