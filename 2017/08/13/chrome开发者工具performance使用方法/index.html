@@ -11,18 +11,20 @@
     
 
     
-    <meta name="description" content="运行时间性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相反.">
+    <meta name="description" content="运行时性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相对。">
 <meta name="keywords" content="工具使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chrome开发者工具performance使用方法">
 <meta property="og:url" content="http://xulang.site/2017/08/13/chrome开发者工具performance使用方法/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
-<meta property="og:description" content="运行时间性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相反.">
+<meta property="og:description" content="运行时性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相对。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-13T15:27:02.404Z">
+<meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/rail.png">
+<meta property="og:updated_time" content="2017-08-13T15:55:03.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chrome开发者工具performance使用方法">
-<meta name="twitter:description" content="运行时间性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相反.">
+<meta name="twitter:description" content="运行时性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相对。">
+<meta name="twitter:image" content="http://otqkq32hb.bkt.clouddn.com/rail.png">
 
     
     
@@ -95,11 +97,21 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始部分"><span class="toc-number">1.</span> <span class="toc-text">开始部分</span></a></li></ol>
 		
 		</div>
 		
-		<p>运行时间性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相反.<br><a id="more"></a><br>本文参考翻译(Get Started With Analyzing Runtime Performance)[<a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/" target="_blank" rel="external">https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/</a>]</p>
+		<p>运行时性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相对。<br><a id="more"></a><br>本文参考翻译<a href="Performancehttps://developers.google.com/web/tools/chrome-devtools/evaluate-performance/" target="_blank" rel="external">Get Started With Analyzing Runtime</a></p>
+<blockquote>
+<p>本文旨在引导如何使用Chrome开发者工具Performance面板来分析运行时性能（runtime performance）。在<a href="https://developers.google.com/web/fundamentals/performance/rail" target="_blank" rel="external">RAIL</a>模型方面，本教程中你所学习的技能对于分析您网页的请求（Response）、动画效果（Animation）以及空闲进程（Idle phases）非常有用。</p>
+</blockquote>
+<p>这里有必要一下RAIL模型，简单来说</p>
+<blockquote>
+<p>RAIL是一种以用户为中心的性能模型。每个网络应用均具有与其生命周期有关的四个不同方面，且这些方面以不同的方式影响着性能</p>
+</blockquote>
+<p><img src="http://otqkq32hb.bkt.clouddn.com/rail.png" alt=""></p>
+<h2 id="开始部分"><a href="#开始部分" class="headerlink" title="开始部分"></a>开始部分</h2><p>这部分内容用于指导你用开发者工具的Performance面板来找到你的页面的性能瓶颈。</p>
+<p>1.使用无痕模式(Incofnito Mode)打开你的Chrome浏览器，windows,linux下可以使用Ctrl+Shift+n，Mac下使用⌘+Shift+n打开，使用无痕模式的一个主要原因是该模式能确保Chrome运行在干净的状态(clean state)，例如，例如，如果你安装了很多的扩展程序，这些扩展程序可能会对的你的性能表现造成干扰。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -181,7 +193,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始部分"><span class="toc-number">1.</span> <span class="toc-text">开始部分</span></a></li></ol>
  
   </div>
 
