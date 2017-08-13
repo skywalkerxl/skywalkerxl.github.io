@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>建造者模式 | 徐浪的个人博客</title>
+    <title>chrome开发者工具performance使用方法 | 徐浪的个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lang">
     
 
     
-    <meta name="description" content="建造者（Builder）模式：将一个复杂对象的构建层与其表示层相互分离，同样的构成过程可采用不同的表示。">
-<meta name="keywords" content="JavaScript设计模式">
+    <meta name="description" content="运行时间性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相反.">
+<meta name="keywords" content="工具使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="建造者模式">
-<meta property="og:url" content="http://xulang.site/2017/08/07/建造者模式/index.html">
+<meta property="og:title" content="chrome开发者工具performance使用方法">
+<meta property="og:url" content="http://xulang.site/2017/08/13/chrome开发者工具performance使用方法/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
-<meta property="og:description" content="建造者（Builder）模式：将一个复杂对象的构建层与其表示层相互分离，同样的构成过程可采用不同的表示。">
+<meta property="og:description" content="运行时间性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相反.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-07T10:57:03.285Z">
+<meta property="og:updated_time" content="2017-08-13T15:27:02.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="建造者模式">
-<meta name="twitter:description" content="建造者（Builder）模式：将一个复杂对象的构建层与其表示层相互分离，同样的构成过程可采用不同的表示。">
+<meta name="twitter:title" content="chrome开发者工具performance使用方法">
+<meta name="twitter:description" content="运行时间性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相反.">
 
     
     
@@ -79,14 +79,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/07/建造者模式/" title="建造者模式" itemprop="url">建造者模式</a>
+      <a href="/2017/08/13/chrome开发者工具performance使用方法/" title="chrome开发者工具performance使用方法" itemprop="url">chrome开发者工具performance使用方法</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lang" target="_blank" itemprop="author">Lang</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-07T10:25:45.000Z" itemprop="datePublished"> 发表于 2017-08-07</time>
+    <time datetime="2017-08-13T15:19:27.000Z" itemprop="datePublished"> 发表于 2017-08-13</time>
     
   </p>
 </header>
@@ -95,16 +95,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建对象的另一种形式"><span class="toc-number">1.</span> <span class="toc-text">创建对象的另一种形式</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p>建造者（Builder）模式：将一个复杂对象的构建层与其表示层相互分离，同样的构成过程可采用不同的表示。<br><a id="more"></a></p>
-<h2 id="创建对象的另一种形式"><a href="#创建对象的另一种形式" class="headerlink" title="创建对象的另一种形式"></a>创建对象的另一种形式</h2><blockquote>
-<p>工厂模式主要是为了创建对象实例或者类簇（抽象工厂）,关心的是最终产出（创建）的是什么。不关心你创建的整个过程，仅仅需要知道你最终创建的结果</p>
-<p>建造者模式在创建对象时要更为复杂一些，虽然其目的也是为了创建对象，但是它更多关心的是创建这个对象的整个过程,<strong>甚至于创建对象的每一个细节</strong>。</p>
-</blockquote>
-<p>代码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 创建一位人类</span></div><div class="line"><span class="keyword">var</span> Human = <span class="function"><span class="keyword">function</span>(<span class="params">param</span>)</span>&#123;</div><div class="line">  <span class="comment">// 技能</span></div><div class="line">  <span class="keyword">this</span>.skill = param &amp;&amp; param.skill || <span class="string">'保留'</span>;</div><div class="line">  <span class="comment">// 兴趣爱好</span></div><div class="line">  <span class="keyword">this</span>.hobby = param &amp;&amp; param.hobby || <span class="string">'保密'</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 类人原型方法</span></div><div class="line">Human.prototype = &#123;</div><div class="line">	<span class="attr">getSkill</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.skill;</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">getHobby</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.hobby;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 实例化姓名类</span></div><div class="line"><span class="keyword">var</span> Named = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">  <span class="comment">//构造器</span></div><div class="line">  <span class="comment">//构造函数解析姓名的姓与名</span></div><div class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">name, that</span>)</span>&#123;</div><div class="line">    that.wholeName = name;</div><div class="line">    <span class="keyword">if</span>(name.indexOf(<span class="string">' '</span>) &gt; <span class="number">-1</span> )&#123;</div><div class="line">      that.FirstName = name.slice(<span class="number">0</span>, name.indexOf(<span class="string">' '</span>));</div><div class="line">      that.SecondName = name.slice(name.indexOf(<span class="string">' '</span>));</div><div class="line">    &#125;</div><div class="line">  &#125;)(name, that);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 实例化职位类</span></div><div class="line"><span class="keyword">var</span> Work = <span class="function"><span class="keyword">function</span>(<span class="params">work</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">  <span class="comment">//构造器</span></div><div class="line">  <span class="comment">//构造函数中通过传入的职位特征来设置相应职位及描述</span></div><div class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">work , that</span>)</span>&#123;</div><div class="line">    <span class="keyword">switch</span>(work)&#123;</div><div class="line">      <span class="keyword">case</span>  <span class="string">'code'</span> :</div><div class="line">      	that.work = <span class="string">'工程师'</span>;</div><div class="line">      	that.workDescription = <span class="string">'每天沉醉编程'</span>;</div><div class="line">      	<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">'UI'</span>:</div><div class="line">      	that.work = <span class="string">'美工'</span>;</div><div class="line">      	that.workDescription = <span class="string">'精通ps'</span>;</div><div class="line">      	<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">'UE'</span>:</div><div class="line">      	that.work = <span class="string">'设计师'</span>;</div><div class="line">      	that.workDescription = <span class="string">'设计更是一种艺术'</span>;</div><div class="line">      	<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">'teach'</span>:</div><div class="line">      	that.work = <span class="string">'教师'</span>;</div><div class="line">      	that.workDescription = <span class="string">'蜡炬成灰泪始干'</span>；</div><div class="line">      	<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">default</span> :</div><div class="line">      	that.work = work;</div><div class="line">      	that.workDescipt = <span class="string">'对不起，我们还不清楚你所选择职位的相关描述'</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;)(work, that)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//更换期望的职位</span></div><div class="line">Work.Prototype.changeWork = <span class="function"><span class="keyword">function</span>(<span class="params">work</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.work = work;</div><div class="line">&#125;</div><div class="line"><span class="comment">//添加对职位的描述</span></div><div class="line">Work.prototype.changeDescript = <span class="function"><span class="keyword">function</span>(<span class="params">setence</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.workDescript = sentence;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+		<p>运行时间性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相反.<br><a id="more"></a><br>本文参考翻译(Get Started With Analyzing Runtime Performance)[<a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/" target="_blank" rel="external">https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/</a>]</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -112,13 +107,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/JavaScript设计模式/">JavaScript设计模式</a>
+  <a class="article-category-link" href="/categories/工具使用/">工具使用</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JavaScript设计模式/">JavaScript设计模式</a>
+  <span></span> <a href="/tags/工具使用/">工具使用</a>
   </div>
 
 </div>
@@ -127,7 +122,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://xulang.site/2017/08/07/建造者模式/" data-title="建造者模式 | 徐浪的个人博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://xulang.site/2017/08/13/chrome开发者工具performance使用方法/" data-title="chrome开发者工具performance使用方法 | 徐浪的个人博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -140,19 +135,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/08/13/chrome开发者工具performance使用方法/" title="chrome开发者工具performance使用方法">
-  <strong>上一篇：</strong><br/>
-  <span>
-  chrome开发者工具performance使用方法</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/08/05/抽象工厂模式/"  title="抽象工厂模式">
+<a href="/2017/08/07/建造者模式/"  title="建造者模式">
  <strong>下一篇：</strong><br/> 
- <span>抽象工厂模式
+ <span>建造者模式
 </span>
 </a>
 </div>
@@ -194,7 +181,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建对象的另一种形式"><span class="toc-number">1.</span> <span class="toc-text">创建对象的另一种形式</span></a></li></ol>
+ 
  
   </div>
 
