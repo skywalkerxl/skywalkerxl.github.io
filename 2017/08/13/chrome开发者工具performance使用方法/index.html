@@ -20,7 +20,7 @@
 <meta property="og:description" content="运行时性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相对。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/rail.png">
-<meta property="og:updated_time" content="2017-08-13T15:55:03.215Z">
+<meta property="og:updated_time" content="2017-08-14T13:30:16.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chrome开发者工具performance使用方法">
 <meta name="twitter:description" content="运行时性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相对。">
@@ -97,21 +97,32 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始部分"><span class="toc-number">1.</span> <span class="toc-text">开始部分</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始部分"><span class="toc-number">1.</span> <span class="toc-text">开始部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模仿移动端CPU"><span class="toc-number">1.1.</span> <span class="toc-text">模仿移动端CPU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置案例"><span class="toc-number">1.2.</span> <span class="toc-text">设置案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#记录运行时性能"><span class="toc-number">1.3.</span> <span class="toc-text">记录运行时性能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析数据"><span class="toc-number">2.</span> <span class="toc-text">分析数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分析每秒钟的画面"><span class="toc-number">2.1.</span> <span class="toc-text">分析每秒钟的画面</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>运行时性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相对。<br><a id="more"></a><br>本文参考翻译<a href="Performancehttps://developers.google.com/web/tools/chrome-devtools/evaluate-performance/" target="_blank" rel="external">Get Started With Analyzing Runtime</a></p>
+		<p>运行时性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相对。<br><a id="more"></a><br>本文参考翻译<a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/" target="_blank" rel="external">Get Started With Analyzing Runtime Performance</a></p>
 <blockquote>
 <p>本文旨在引导如何使用Chrome开发者工具Performance面板来分析运行时性能（runtime performance）。在<a href="https://developers.google.com/web/fundamentals/performance/rail" target="_blank" rel="external">RAIL</a>模型方面，本教程中你所学习的技能对于分析您网页的请求（Response）、动画效果（Animation）以及空闲进程（Idle phases）非常有用。</p>
 </blockquote>
-<p>这里有必要一下RAIL模型，简单来说</p>
+<p>这里有必要提一下RAIL模型，简单来说</p>
 <blockquote>
 <p>RAIL是一种以用户为中心的性能模型。每个网络应用均具有与其生命周期有关的四个不同方面，且这些方面以不同的方式影响着性能</p>
 </blockquote>
 <p><img src="http://otqkq32hb.bkt.clouddn.com/rail.png" alt=""></p>
 <h2 id="开始部分"><a href="#开始部分" class="headerlink" title="开始部分"></a>开始部分</h2><p>这部分内容用于指导你用开发者工具的Performance面板来找到你的页面的性能瓶颈。</p>
-<p>1.使用无痕模式(Incofnito Mode)打开你的Chrome浏览器，windows,linux下可以使用Ctrl+Shift+n，Mac下使用⌘+Shift+n打开，使用无痕模式的一个主要原因是该模式能确保Chrome运行在干净的状态(clean state)，例如，例如，如果你安装了很多的扩展程序，这些扩展程序可能会对的你的性能表现造成干扰。</p>
+<p>1.使用无痕模式(Incofnito Mode)打开你的Chrome浏览器，windows,linux下可以使用Ctrl+Shift+n，Mac下使用⌘+Shift+n打开，使用无痕模式的一个主要原因是该模式能确保Chrome运行在干净的状态(clean state)，例如，例如，如果你安装了很多的扩展程序，这些扩展程序可能会对的你的性能测量结果造成干扰。</p>
+<p>2.在你的无痕窗口中加载如下页面<a href="https://googlechrome.github.io/devtools-samples/jank/" target="_blank" rel="external">demo</a>,这是一个你将要测试的小例子，该页面展示了一束上下移动的蓝色小正方形。</p>
+<p>3.打开你的开发者工具。</p>
+<h3 id="模仿移动端CPU"><a href="#模仿移动端CPU" class="headerlink" title="模仿移动端CPU"></a>模仿移动端CPU</h3><p>移动端设备相对于桌面端有着更少的计算能力，无论你在什么时候测试一个页面，使用<strong>CPU Throttling</strong>来模仿你的页面在移动端的表现。</p>
+<p>1.在开发者工具中，点击<strong>Performance</strong>选项。<br>2.确定<strong>Screenshots</strong>（截屏）复选框已选中<br>3.点击<strong>Capture Setting</strong><br>4.在<strong>CPU</strong>选项中，选择2x slowdown。开发者工具会限制你的CPU使得他会比平时慢至2倍</p>
+<h3 id="设置案例"><a href="#设置案例" class="headerlink" title="设置案例"></a>设置案例</h3><p>对于该网站的所有浏览者来说，很难去创建一个持续运行的案例来测试运行时性能。该模块可以让你自定义案例来确保你的经验与你在该引导中看到的截屏和描述大致相同，而无视你的特定设置。</p>
+<p>1.一直点击<strong>Add 10</strong>直到蓝色正方形显著比之前要慢，在高端机器中，可能要点击20次。<br>2.点击<strong>Optimize</strong>，这个蓝色的方块应该运动的更快和更平滑。<br>3.点击<strong>Oprimize</strong>，蓝色方块应该运动的更慢并会再次闪烁（jank 像是掉帧）</p>
+<h3 id="记录运行时性能"><a href="#记录运行时性能" class="headerlink" title="记录运行时性能"></a>记录运行时性能</h3><p>当你运行该页面的最佳版本时，蓝色放开运行的更快，为什么会这样，两个版本应该在相同的时间里有着相同的空间。在Performance面板中来了解如何测试在未优化的版本中的性能瓶颈。</p>
+<p>1.在开发者工具中，点击<strong>Record</strong>,开发者工具会捕获页面运行时的性能标准(performance metrics)<br>2.等待几秒钟。<br>3.点击<strong>Stop</strong>。开发者工具停止记录，记录数据，然后在性能面板中记录结果。</p>
+<h2 id="分析数据"><a href="#分析数据" class="headerlink" title="分析数据"></a>分析数据</h2><p>一旦你开始记录页面性能，你可以测量页面表现有多糟糕，并找到原因。</p>
+<h3 id="分析每秒钟的画面"><a href="#分析每秒钟的画面" class="headerlink" title="分析每秒钟的画面"></a>分析每秒钟的画面</h3><p>任何动画的性能表现测量标准是FPS，用户们在60FPS的动画表现下感到十分愉悦</p>
+<p>1.看着FPS图表，无论你在什么时候看到的在<strong>FPS</strong>上的红色</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -193,7 +204,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始部分"><span class="toc-number">1.</span> <span class="toc-text">开始部分</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始部分"><span class="toc-number">1.</span> <span class="toc-text">开始部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模仿移动端CPU"><span class="toc-number">1.1.</span> <span class="toc-text">模仿移动端CPU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置案例"><span class="toc-number">1.2.</span> <span class="toc-text">设置案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#记录运行时性能"><span class="toc-number">1.3.</span> <span class="toc-text">记录运行时性能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析数据"><span class="toc-number">2.</span> <span class="toc-text">分析数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分析每秒钟的画面"><span class="toc-number">2.1.</span> <span class="toc-text">分析每秒钟的画面</span></a></li></ol></li></ol>
  
   </div>
 
@@ -245,15 +256,15 @@
 			
 		
 			
-				<li><a href="/tags/工具使用/" title="工具使用">工具使用<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/工具使用/" title="工具使用">工具使用<sup>1</sup></a></li>
 			
 		
 			
