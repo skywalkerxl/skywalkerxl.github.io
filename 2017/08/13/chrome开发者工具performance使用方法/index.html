@@ -20,7 +20,7 @@
 <meta property="og:description" content="运行时性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相对。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/rail.png">
-<meta property="og:updated_time" content="2017-08-14T13:30:16.751Z">
+<meta property="og:updated_time" content="2017-08-15T02:12:46.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chrome开发者工具performance使用方法">
 <meta name="twitter:description" content="运行时性能（Runtime performance）是指页面运行(running)时的表现情况，这与页面加载(loading)相对。">
@@ -120,9 +120,14 @@
 <p>1.一直点击<strong>Add 10</strong>直到蓝色正方形显著比之前要慢，在高端机器中，可能要点击20次。<br>2.点击<strong>Optimize</strong>，这个蓝色的方块应该运动的更快和更平滑。<br>3.点击<strong>Oprimize</strong>，蓝色方块应该运动的更慢并会再次闪烁（jank 像是掉帧）</p>
 <h3 id="记录运行时性能"><a href="#记录运行时性能" class="headerlink" title="记录运行时性能"></a>记录运行时性能</h3><p>当你运行该页面的最佳版本时，蓝色放开运行的更快，为什么会这样，两个版本应该在相同的时间里有着相同的空间。在Performance面板中来了解如何测试在未优化的版本中的性能瓶颈。</p>
 <p>1.在开发者工具中，点击<strong>Record</strong>,开发者工具会捕获页面运行时的性能标准(performance metrics)<br>2.等待几秒钟。<br>3.点击<strong>Stop</strong>。开发者工具停止记录，记录数据，然后在性能面板中记录结果。</p>
-<h2 id="分析数据"><a href="#分析数据" class="headerlink" title="分析数据"></a>分析数据</h2><p>一旦你开始记录页面性能，你可以测量页面表现有多糟糕，并找到原因。</p>
+<h2 id="分析数据"><a href="#分析数据" class="headerlink" title="分析数据"></a>分析数据</h2><p>一旦你开始记录页面性能，就可以测量页面表现有多糟糕，并找到原因。</p>
 <h3 id="分析每秒钟的画面"><a href="#分析每秒钟的画面" class="headerlink" title="分析每秒钟的画面"></a>分析每秒钟的画面</h3><p>任何动画的性能表现测量标准是FPS，用户们在60FPS的动画表现下感到十分愉悦</p>
-<p>1.看着FPS图表，无论你在什么时候看到的在<strong>FPS</strong>上的红色</p>
+<p>1.仔细观察FPS图表，无论你在什么时候看到的在<strong>FPS</strong>上的红条，这也意味着帧速率（framerate）下降的如此之快以至于损害了用户体验，总的来说，绿条越高，FPS就越高。<br>2.在FPS图表的下面可以看到CPU图表。CPU图表中的颜色与Performance面板底部的<strong>Summary</strong>选项中的颜色一致，事实上，充满颜色的CPU图表意味着CPU在记录中被最大限度（max out）的使用。无论你在什么时候看到了CPU长时间被最大限度的使用，这意味着是时候找到做更少工作的方法 。<br>3.鼠标滑过<strong>FPS</strong>、<strong>CPU</strong>或者是<strong>NET</strong>图表，开发者工具及时的展示了这点上该页面的截图，左右移动你的鼠标来回放记录，这被称为清理（scrubbing），而且这对于手动分析动画进程十分有用。<br>4.在<strong>Frames</strong>模块，鼠标滑过其中一个绿色正方形，开发者工具会向你展示局部画面，每个画面都远低于（well below）60FPS的目标</p>
+<p>当然，在这个样例中，很明显能看出该页面的表现性能并不好。但是在真实的情景中（scenarios）可能并不会这样清晰，所以让所有的这些工具在测量时都派的上用场（come in handy）</p>
+<p>此外：打开FPS计量器</p>
+<p>另外一个轻巧（handy）的工具则是FPS计量器（FPS meter），这是对页面在运行时的实时（real-time）FPS反映。</p>
+<p>1.按下cmd + shift + p(mac)或者control + shfit + p(windows,Linux)下来打开命令菜单<br>2.在命令菜单中开始输入<code>Rendering</code>并选择<strong>Show Rendering</strong><br>3.在<strong>Rendering</strong>选项中，调出<strong>FPS Meter</strong>，一个新的表现层展示在了你的视口的右上角<br>4.关闭面板</p>
+<p>###找到瓶颈</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -256,11 +261,11 @@
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
@@ -268,7 +273,7 @@
 			
 		
 			
-				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
+				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
 			
 		
 		</ul>
