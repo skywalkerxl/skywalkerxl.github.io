@@ -11,16 +11,19 @@
     
 
     
-    <meta name="keywords" content="JavaScript设计模式">
+    <meta name="description" content="本文系列参考《JavaScript设计模式》">
+<meta name="keywords" content="JavaScript设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="灵活的语言-Javascript">
 <meta property="og:url" content="http://xulang.site/2017/07/27/灵活的语言-Javascript/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
+<meta property="og:description" content="本文系列参考《JavaScript设计模式》">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://otqkq32hb.bkt.clouddn.com/javascript-design-patterns-cover-1.jpg">
-<meta property="og:updated_time" content="2017-07-28T02:27:11.725Z">
+<meta property="og:updated_time" content="2017-08-16T13:29:51.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="灵活的语言-Javascript">
+<meta name="twitter:description" content="本文系列参考《JavaScript设计模式》">
 <meta name="twitter:image" content="http://otqkq32hb.bkt.clouddn.com/javascript-design-patterns-cover-1.jpg">
 
     
@@ -98,7 +101,7 @@
 		
 		</div>
 		
-		<p><img src="http://otqkq32hb.bkt.clouddn.com/javascript-design-patterns-cover-1.jpg" alt=""><br><a id="more"></a><br>本文系列参考《JavaScript设计模式》</p>
+		<p>本文系列参考《JavaScript设计模式》<br><a id="more"></a><br><img src="http://otqkq32hb.bkt.clouddn.com/javascript-design-patterns-cover-1.jpg" alt=""></p>
 <h3 id="为什么要学习设计模式"><a href="#为什么要学习设计模式" class="headerlink" title="为什么要学习设计模式"></a>为什么要学习设计模式</h3><p>通俗老说，设计模式只是一些总结起来的编码风格，而这种编码总结出来的经验对于新手程序员来说是十分有益的，简单来说，就是能让人觉得“这段代码写得好”。</p>
 <h3 id="面向过程的弊端"><a href="#面向过程的弊端" class="headerlink" title="面向过程的弊端"></a>面向过程的弊端</h3><p>拿书中的例子来说吧,新手程序在面对需求时，会经常性的采用面向过程的思想来解决，例如要编写邮箱验证、姓名验证以及密码验证的需求，通常会这样写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkName</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//验证姓名</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkEmail</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//验证邮箱</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkPassword</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//验证密码</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这样做确实有效果，但是这也暴露了一些问题<strong>设置了太多的全局变量</strong><br>明明申明的是函数，为什么说申明的是全局变量呢？我们可以这样来写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> checkName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//验证姓名</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> checkEmail = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//验证邮箱</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> checkPassword = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//验证密码</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -286,11 +289,11 @@
 			
 		
 			
-				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
+				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/计算机网络/" title="计算机网络">计算机网络<sup>1</sup></a></li>
+				<li><a href="/tags/nodeJS/" title="nodeJS">nodeJS<sup>1</sup></a></li>
 			
 		
 		</ul>
