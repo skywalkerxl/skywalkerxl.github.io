@@ -4,28 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>了解米其林餐厅 | 徐浪的个人博客</title>
+    <title>Javascript插件架构 | 徐浪的个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lang">
     
 
     
-    <meta name="description" content="今天看了部纪录片【720P 属于吃货们的Sushi纪录片】寿司之神 (2011)">
-<meta name="keywords" content="杂谈">
+    <meta name="description" content="jQuery插件开发规范">
+<meta name="keywords" content="js&#x2F;jQuery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="了解米其林餐厅">
-<meta property="og:url" content="http://xulang.site/2017/08/19/了解米其林餐厅/index.html">
+<meta property="og:title" content="Javascript插件架构">
+<meta property="og:url" content="http://xulang.site/2017/08/26/Javascript插件架构/index.html">
 <meta property="og:site_name" content="徐浪的个人博客">
-<meta property="og:description" content="今天看了部纪录片【720P 属于吃货们的Sushi纪录片】寿司之神 (2011)">
+<meta property="og:description" content="jQuery插件开发规范">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://pic4.zhimg.com/10a91db0551f482bf949d2864ad979d7_b.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-f7fdf14f268a4bc5119ebd42b9a3dc01_b.jpg">
-<meta property="og:updated_time" content="2017-08-20T06:51:18.697Z">
+<meta property="og:updated_time" content="2017-08-26T13:50:28.682Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="了解米其林餐厅">
-<meta name="twitter:description" content="今天看了部纪录片【720P 属于吃货们的Sushi纪录片】寿司之神 (2011)">
-<meta name="twitter:image" content="https://pic4.zhimg.com/10a91db0551f482bf949d2864ad979d7_b.jpg">
+<meta name="twitter:title" content="Javascript插件架构">
+<meta name="twitter:description" content="jQuery插件开发规范">
 
     
     
@@ -82,14 +79,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/19/了解米其林餐厅/" title="了解米其林餐厅" itemprop="url">了解米其林餐厅</a>
+      <a href="/2017/08/26/Javascript插件架构/" title="Javascript插件架构" itemprop="url">Javascript插件架构</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lang" target="_blank" itemprop="author">Lang</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-19T08:19:48.000Z" itemprop="datePublished"> 发表于 2017-08-19</time>
+    <time datetime="2017-08-26T13:41:18.000Z" itemprop="datePublished"> 发表于 2017-08-26</time>
     
   </p>
 </header>
@@ -98,26 +95,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是米其林餐厅？"><span class="toc-number">1.</span> <span class="toc-text">什么是米其林餐厅？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#米其林指南"><span class="toc-number">1.1.</span> <span class="toc-text">米其林指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#米其林餐厅"><span class="toc-number">1.2.</span> <span class="toc-text">米其林餐厅</span></a></li></ol></li></ol>
+			
 		
 		</div>
 		
-		<p>今天看了部纪录片<a href="https://www.bilibili.com/video/av1723118/" target="_blank" rel="external">【720P 属于吃货们的Sushi纪录片】寿司之神 (2011)</a></p>
-<a id="more"></a>
-<p>除了感叹寿司之神小野二郎十分精湛的技术和让人钦佩的敬业精神之外，“数寄屋桥次郎”这家被评为“米其林三星”的称号也让我十分的着迷，曾经不止一次听说过米其林餐厅这个名字，也一直好奇米其林餐厅到底是什么，一顿搜索之后，也差不多知道了个所以然。</p>
-<h2 id="什么是米其林餐厅？"><a href="#什么是米其林餐厅？" class="headerlink" title="什么是米其林餐厅？"></a>什么是米其林餐厅？</h2><p>其实在提到米其林餐厅这个概念之前，不得不先了解下米其林指南。</p>
-<h3 id="米其林指南"><a href="#米其林指南" class="headerlink" title="米其林指南"></a>米其林指南</h3><p>其实提到米其林，大家会有的反应肯定是法国的米其林轮胎制造商</p>
-<blockquote>
-<p>米其林指南(the MICHELIN Guide)是由法国轮胎制造商米其林公司推出的餐厅和酒店指南。</p>
-</blockquote>
-<p>图片来自网上，侵删<br><img src="https://pic4.zhimg.com/10a91db0551f482bf949d2864ad979d7_b.jpg" alt=""></p>
-<p>这是个人人都可以购买的指南，据说这也是米其林获利来源的一部分，米其林指南中收录的餐厅和酒店是由米其林探员匿名造访的</p>
-<blockquote>
-<p>指南不是对未来美食趋势的预测，而是评点当前的现状，以彰显业界不断发展的动力和精神。</p>
-</blockquote>
-<h3 id="米其林餐厅"><a href="#米其林餐厅" class="headerlink" title="米其林餐厅"></a>米其林餐厅</h3><p>1.当年入选米其林指南的都可以被称为米其林餐厅 。<br>2.米其林星级餐厅：米其林指南将星级授予那些特别优秀的餐厅。</p>
-<p><img src="https://pic2.zhimg.com/v2-f7fdf14f268a4bc5119ebd42b9a3dc01_b.jpg" alt=""></p>
-<p>在纪录片中，“数寄屋桥次郎”被评为米其林三星，要知道三星可是最高评分且在中国上海只有一家餐厅被评为“米其林三星”，不过对于中国上海的米其林指南，不同的人有着不同的看法，上一篇知乎上的话题<a href="https://www.zhihu.com/question/50848227" target="_blank" rel="external">上海唐阁为什么会被评为米其林三星？</a></p>
+		<p>jQuery插件开发规范</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -125,13 +107,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
+  <a class="article-category-link" href="/categories/js-jQuery/">js/jQuery</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/杂谈/">杂谈</a>
+  <span></span> <a href="/tags/js-jQuery/">js/jQuery</a>
   </div>
 
 </div>
@@ -140,7 +122,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://xulang.site/2017/08/19/了解米其林餐厅/" data-title="了解米其林餐厅 | 徐浪的个人博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://xulang.site/2017/08/26/Javascript插件架构/" data-title="Javascript插件架构 | 徐浪的个人博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -153,19 +135,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/08/22/浅析前端页面中的多关键字搜索/" title="浅析前端页面中的多关键字搜索">
-  <strong>上一篇：</strong><br/>
-  <span>
-  浅析前端页面中的多关键字搜索</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/08/13/chrome开发者工具performance使用方法/"  title="chrome开发者工具performance使用方法">
+<a href="/2017/08/25/序列化与反序列化/"  title="序列化与反序列化">
  <strong>下一篇：</strong><br/> 
- <span>chrome开发者工具performance使用方法
+ <span>序列化与反序列化
 </span>
 </a>
 </div>
@@ -207,7 +181,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是米其林餐厅？"><span class="toc-number">1.</span> <span class="toc-text">什么是米其林餐厅？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#米其林指南"><span class="toc-number">1.1.</span> <span class="toc-text">米其林指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#米其林餐厅"><span class="toc-number">1.2.</span> <span class="toc-text">米其林餐厅</span></a></li></ol></li></ol>
+ 
  
   </div>
 
